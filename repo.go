@@ -4,6 +4,6 @@ type Repo struct {
 	*query
 }
 
-func New(tableName string) *Repo {
-	return &Repo{query: &query{table: tableName}}
+func New(tableName string, execer Execer) *Repo {
+	return &Repo{query: &query{table: tableName, execer: execer}}
 }
